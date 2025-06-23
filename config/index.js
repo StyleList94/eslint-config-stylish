@@ -3,7 +3,16 @@ import tseslint from 'typescript-eslint';
 import importPlugin from 'eslint-plugin-import';
 
 export default tseslint.config({
+  ignores: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**'],
   extends: [eslint.configs.recommended, importPlugin.flatConfigs.recommended],
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src'],
+      },
+    },
+  },
   languageOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
@@ -17,18 +26,22 @@ export default tseslint.config({
         treatUndefinedAsUnspecified: false,
       },
     ],
+    'import/export': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
       {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
+        ignorePackages: true,
+        pattern: {
+          js: 'never',
+          jsx: 'never',
+          ts: 'never',
+          tsx: 'never',
+        },
       },
     ],
     'import/newline-after-import': 'error',
-    'import/no-cycle': 'error',
+    'import/no-cycle': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -36,6 +49,7 @@ export default tseslint.config({
           '**/*.test.?(ts|tsx)',
           '**/*.spec.?(ts|tsx)',
           '**/test-utils.tsx',
+          '**/__mocks__/**',
           'eslint.config.*',
         ],
       },
@@ -46,6 +60,7 @@ export default tseslint.config({
       'error',
       {
         groups: [
+          'type',
           'builtin',
           'external',
           'internal',
@@ -53,19 +68,7 @@ export default tseslint.config({
           'sibling',
           'index',
         ],
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            pattern: 'react',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: '@/**',
-            group: 'parent',
-            position: 'before',
-          },
-        ],
+        'newlines-between': 'always-and-inside-groups',
       },
     ],
     'import/prefer-default-export': 'error',

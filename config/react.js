@@ -10,6 +10,11 @@ export default tseslint.config({
     'react-hooks': reactHooks,
     'jsx-a11y': jsxA11y,
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   languageOptions: {
     ...reactPlugin.configs.flat.recommended.languageOptions,
     ...jsxA11y.flatConfigs.recommended.languageOptions,
