@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-stylish",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "ESLint configuration that extends the stylish rules",
   "main": "index.js",
   "types": "./config/index.d.ts",
