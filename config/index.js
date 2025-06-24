@@ -18,14 +18,21 @@ export default tseslint.config({
     sourceType: 'module',
   },
   rules: {
-    'no-unused-vars': 'error',
-    'no-console': 'warn',
     'consistent-return': [
       'error',
       {
         treatUndefinedAsUnspecified: false,
       },
     ],
+    'no-console': 'warn',
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsForRegex: ['^state$', '^ctx$'],
+      },
+    ],
+    'no-unused-vars': 'error',
     'import/export': 'off',
     'import/extensions': [
       'error',
@@ -46,9 +53,9 @@ export default tseslint.config({
       'error',
       {
         devDependencies: [
-          '**/*.test.?(ts|tsx)',
-          '**/*.spec.?(ts|tsx)',
-          '**/test-utils.tsx',
+          '**/*.test.?(js|ts|tsx)',
+          '**/*.spec.?(js|ts|tsx)',
+          '**/test-utils.?(js|tsx)',
           '**/__mocks__/**',
           'eslint.config.*',
         ],
@@ -72,12 +79,5 @@ export default tseslint.config({
       },
     ],
     'import/prefer-default-export': 'error',
-    'no-param-reassign': [
-      'error',
-      {
-        props: true,
-        ignorePropertyModificationsForRegex: ['^state$', '^ctx$'],
-      },
-    ],
   },
 });

@@ -2,32 +2,36 @@
 
 Stylish ESLint configuration for Front-end Engineers.
 
+## Getting Started
+
+Requirements:
+
+- `eslint`: v9 or later
+- `@eslint/js`: v9 or later
+- `eslint-plugin-import`: v2 or later
+- `eslint-plugin-jsx-a11y`: v6 or later
+- `eslint-plugin-react`: v7 or later
+- `eslint-plugin-react-hooks`: v5 or later
+- `typescript-eslint`: v8 or later (if you use TypeScript)
+- `eslint-import-resolver-typescript`: v2 or later (if you use TypeScript)
+
+```bash
+pnpm add -D \
+  eslint-config-stylish \
+  eslint @eslint/js \
+  eslint-plugin-import \
+  eslint-plugin-jsx-a11y \
+  eslint-plugin-react \
+  eslint-plugin-react-hooks \
+  typescript-eslint \
+  eslint-import-resolver-typescript
+```
+
 ## Features
 
 - **Base**: Recommended ESLint rules, import/export rules
 - **React**: Customized rules for React, JSX a11y
 - **TypeScript**: Adds TypeScript-specific linting rules and configurations.
-
-## Installation
-
-Requirements:
-
-- `eslint`: v9 or later
-- `eslint-plugin-import`: v2 or later
-- `eslint-plugin-jsx-a11y`: v6 or later
-- `eslint-plugin-react`: v7 or later
-- `eslint-plugin-react-hooks`: v5 or later
-- `typescript-eslint`: v8 or later
-
-```bash
-pnpm add -D \
-  eslint-config-stylish \
-  eslint typescript-eslint \
-  eslint-plugin-import \
-  eslint-plugin-jsx-a11y \
-  eslint-plugin-react \
-  eslint-plugin-react-hooks
-```
 
 ## Usage
 
@@ -37,12 +41,12 @@ set up your `eslint.config.js` file like this
 
 ```js
 import { defineConfig } from 'eslint/config';
-import stylishConfig from 'eslint-config-stylish';
+import stylish from 'eslint-config-stylish';
 
 export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    extends: [stylishConfig],
+    extends: [stylish],
   },
   /* */
 ]);
@@ -52,12 +56,12 @@ export default defineConfig([
 
 ```js
 import { defineConfig } from 'eslint/config';
-import stylishReactConfig from 'eslint-config-stylish/react';
+import stylishReact from 'eslint-config-stylish/react';
 
 export default defineConfig([
   {
     files: ['**/*.{js,jsx,tsx}'],
-    extends: [stylishReactConfig],
+    extends: [stylishReact],
   },
   /* */
 ]);
@@ -67,7 +71,7 @@ export default defineConfig([
 
 ```js
 import { defineConfig } from 'eslint/config';
-import stylishTypeScriptConfig from 'eslint-config-stylish/typescript';
+import stylishTypeScript from 'eslint-config-stylish/typescript';
 
 export default defineConfig([
   {
@@ -82,7 +86,7 @@ export default defineConfig([
         sourceType: 'module',
       },
     },
-    extends: [stylishTypeScriptConfig],
+    extends: [stylishTypeScript],
   },
   /* */
 ]);
@@ -90,59 +94,62 @@ export default defineConfig([
 
 ## Rules
 
-### ESLint
+- `js`: [recommend](https://eslint.org/docs/latest/rules/#recommended-rules)
+- `import`: [recommended](https://github.com/import-js/eslint-plugin-import?tab=readme-ov-file#rules)
+- `react`: [recommended](https://github.com/jsx-eslint/eslint-plugin-react?tab=readme-ov-file#list-of-supported-rules)
+- `jsx-a11y`: [recommended](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y?tab=readme-ov-file#supported-rules)
+- `@typescript-eslint` [strict type checked](https://typescript-eslint.io/rules/?=strict)
 
-Includes all [recommended rules](https://eslint.org/docs/latest/rules/#recommended-rules).
+### Customized rules
 
-Customized rules:
+`js`
 
-- `no-unused-vars`
-- `no-console`
-- `no-param-reassign`
+- `no-unused-vars`: `error`
+- `no-console`: `warn`
+- `no-param-reassign`: `error` (options for Next.js SSR Props)
 
-### Import
+`import`
 
-Includes all [recommended rules](https://github.com/import-js/eslint-plugin-import?tab=readme-ov-file#rules).
+- `import/extensions`: `error` (add options)
+- `import/export`: `off`
+- `import/newline-after-import`: `error`
+- `import/no-cycle`: `off` (due to performance issues)
+- `import/no-extraneous-dependencies`:`error` (add options for testing)
+- `import/no-self-import`: `error`
+- `import/no-unresolved`: `off`
+- `import/order`: `error` (add group options)
+- `import/prefer-default-export`: `error`
 
-Customized rules:
+`react`
 
-- `import/extensions`
-- `import/newline-after-import`
-- `import/no-cycle`
-- `import/no-extraneous-dependencies`
-- `import/no-self-import`
-- `import/no-unresolved`
-- `import/order`
-- `import/prefer-default-export`
+- `react/button-has-type`: `error`
+- `react/display-name`: `off`
+- `react/function-component-definition` `error` (add options)
+- `react/jsx-filename-extension` `warn` (add options for extensions)
+- `react/prop-types`: `off` (almost all projects use the TypeScript)
+- `react/require-default-props` `off` (same as above)
 
-### React and JSX a11y
+`react-hooks`
 
-Recommended rules:
+- `react-hooks/rules-of-hooks`: `error`
+- `react-hooks/exhaustive-deps`: `warn`
 
-- [React](https://github.com/jsx-eslint/eslint-plugin-react?tab=readme-ov-file#list-of-supported-rules)
-- [JSX a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y?tab=readme-ov-file#supported-rules)
+`jsx-a11y`
 
-Customized rules:
+- `jsx-a11y/label-has-associated-control`: `error` (add options)
 
-- `jsx-a11y/label-has-associated-control`
-- `react/button-has-type`
-- `react/display-name`
-- `react/function-component-definition`
-- `react/jsx-filename-extension`
-- `react/prop-types`
-- `react/require-default-props`
-- `react-hooks/rules-of-hooks`
-- `react-hooks/exhaustive-deps`
+`@typescript-eslint`
 
-### TypeScript ESLint
-
-Includes all [strict rules](https://typescript-eslint.io/rules/?=strict).
-
-Customized rules:
-
-- `@typescript-eslint/explicit-module-boundary-types`
-- `@typescript-eslint/no-empty-interface`
-- `@typescript-eslint/no-floating-promises`
-- `@typescript-eslint/no-misused-promises`
-- `@typescript-eslint/no-unsafe-call`
-- `@typescript-eslint/return-await`
+- `@typescript-eslint/explicit-module-boundary-types`: `off`
+- `@typescript-eslint/no-base-to-string`: `error` (add option for ignored type names)
+- `@typescript-eslint/no-confusing-void-expression`: `error` (add option to ignore arrow shorthand)
+- `@typescript-eslint/no-empty-interface`: `off`
+- `@typescript-eslint/no-empty-object-type`: `error` (add option to allow interfaces with single extends)
+- `@typescript-eslint/no-floating-promises`: `off`
+- `@typescript-eslint/no-misused-promises`: `error` (add option to check void return)
+- `@typescript-eslint/no-unsafe-call`: `off`
+- `@typescript-eslint/no-unused-vars`: `error` (add option for patterns)
+- `@typescript-eslint/prefer-promise-reject-errors`: `error` (add options to allow throwing unknown)
+- `@typescript-eslint/restrict-template-expressions`: `error` (add option to allow number )
+- `@typescript-eslint/return-await`: `off`
+- `@typescript-eslint/unbound-method`: `off` (add option to ignore static)
