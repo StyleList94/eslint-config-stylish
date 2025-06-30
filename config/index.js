@@ -33,6 +33,7 @@ export default tseslint.config({
       },
     ],
     'no-unused-vars': 'error',
+
     'import/export': 'off',
     'import/extensions': [
       'error',
