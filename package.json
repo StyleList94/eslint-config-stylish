@@ -2,7 +2,7 @@
   "name": "eslint-config-stylish",
   "version": "1.1.0",
   "description": "ESLint configuration that extends the stylish rules",
-  "main": "index.js",
+  "main": "./config/index.js",
   "types": "./config/index.d.ts",
   "exports": {
     ".": {
@@ -52,7 +52,7 @@
   "peerDependencies": {
     "@eslint/js": ">=9",
     "eslint": ">=9",
-    "eslint-import-resolver-typescript": ">=4",
+    "eslint-import-resolver-typescript": ">=3",
     "eslint-plugin-import": ">=2",
     "eslint-plugin-jsx-a11y": ">=6",
     "eslint-plugin-react": ">=7",

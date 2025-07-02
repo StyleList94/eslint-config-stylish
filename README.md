@@ -13,7 +13,7 @@ Requirements:
 - `eslint-plugin-react`: v7 or later
 - `eslint-plugin-react-hooks`: v5 or later
 - `typescript-eslint`: v8 or later (if you use TypeScript)
-- `eslint-import-resolver-typescript`: v2 or later (if you use TypeScript)
+- `eslint-import-resolver-typescript`: v3 or later (if you use TypeScript)
 
 ```bash
 pnpm add -D \
@@ -104,9 +104,115 @@ export default defineConfig([
 
 `js`
 
-- [`no-unused-vars`](https://eslint.org/docs/latest/rules/no-unused-vars): `error`
+- [`array-callback-return`](https://eslint.org/docs/latest/rules/array-callback-return): `error` (set `allowImplicit` to `true`)
+- [`arrow-body-style`](https://eslint.org/docs/latest/rules/arrow-body-style): `error`
+- [`block-scoped-var`](https://eslint.org/docs/latest/rules/block-scoped-var): `error`
+- [`camelcase`](https://eslint.org/docs/latest/rules/camelcase): `error`
+  - does not check property names, ES2015 imports, global variables
+  - allows `unstable_` and `experimental_` prefixes
+- [`class-methods-use-this`](https://eslint.org/docs/latest/rules/class-methods-use-this): `error`
+- [`consistent-return`](https://eslint.org/docs/latest/rules/consistent-return): `error`
+- [`curly`](https://eslint.org/docs/latest/rules/curly): `error` (`multi`, `consistent`)
+- [`default-case`](https://eslint.org/docs/latest/rules/default-case): `error` (Ignore with _skip default_ comment)
+- [`default-case-last`](https://eslint.org/docs/latest/rules/default-case-last): `error`
+- [`default-param-last`](https://eslint.org/docs/latest/rules/default-param-last): `error`
+- [`dot-notation`](https://eslint.org/docs/latest/rules/dot-notation): `error`
+- [`eqeqeq`](https://eslint.org/docs/latest/rules/eqeqeq): `error`
+  - always use `===` and `!==`
+  - ignore `null`
+- [`func-names`](https://eslint.org/docs/latest/rules/func-names): `warn` (as needed)
+- [`grouped-accessor-pairs`](https://eslint.org/docs/latest/rules/grouped-accessor-pairs): `error`
+- [`guard-for-in`](https://eslint.org/docs/latest/rules/guard-for-in): `error`
+- [`max-classes-per-file`](https://eslint.org/docs/latest/rules/max-classes-per-file): `error` (1 class per file)
+- [`new-cap`](https://eslint.org/docs/latest/rules/new-cap): `error`
+  - allows uppercase-started functions to be called without new operators.
+  - disables checks on object properties
+- [`no-alert`](https://eslint.org/docs/latest/rules/no-alert): `warn`
+- [`no-array-constructor`](https://eslint.org/docs/latest/rules/no-array-constructor): `error`
+- [`no-await-in-loop`](https://eslint.org/docs/latest/rules/no-await-in-loop): `error`
+- [`no-caller`](https://eslint.org/docs/latest/rules/no-caller): `error`
 - [`no-console`](https://eslint.org/docs/latest/rules/no-console): `warn`
-- [`no-param-reassign`](https://eslint.org/docs/latest/rules/no-param-reassign): `error` (options for Next.js SSR Props)
+- [`no-constructor-return`](https://eslint.org/docs/latest/rules/no-constructor-return): `error`
+- [`no-continue`](https://eslint.org/docs/latest/rules/no-continue): `error`
+- [`no-div-regex`](https://eslint.org/docs/latest/rules/no-div-regex): `error`
+- [`no-else-return`](https://eslint.org/docs/latest/rules/no-else-return): `error` (disallow `else if` blocks after a return too)
+- [`no-empty-function`](https://eslint.org/docs/latest/rules/no-empty-function): `error` (allow `arrowFunctions`, `functions`, `methods`)
+- [`no-eval`](https://eslint.org/docs/latest/rules/no-eval): `error`
+- [`no-extend-native`](https://eslint.org/docs/latest/rules/no-extend-native): `error`
+- [`no-extra-bind`](https://eslint.org/docs/latest/rules/no-extra-bind): `error`
+- [`no-extra-label`](https://eslint.org/docs/latest/rules/no-extra-label): `error`
+- [`no-implied-eval`](https://eslint.org/docs/latest/rules/no-implied-eval): `error`
+- [`no-inner-declarations`](https://eslint.org/docs/latest/rules/no-inner-declarations): `error`
+- [`no-iterator`](https://eslint.org/docs/latest/rules/no-iterator): `error`
+- [`no-label-var`](https://eslint.org/docs/latest/rules/no-label-var): `error`
+- [`no-labels`](https://eslint.org/docs/latest/rules/no-labels): `error`
+- [`no-lone-blocks`](https://eslint.org/docs/latest/rules/no-lone-blocks): `error`
+- [`no-lonely-if`](https://eslint.org/docs/latest/rules/no-lonely-if): `error`
+- [`no-loop-func`](https://eslint.org/docs/latest/rules/no-loop-func): `error`
+- [`no-multi-assign`](https://eslint.org/docs/latest/rules/no-multi-assign): `error`
+- [`no-multi-str`](https://eslint.org/docs/latest/rules/no-multi-str): `error`
+- [`no-nested-ternary`](https://eslint.org/docs/latest/rules/no-nested-ternary): `error`
+- [`no-new`](https://eslint.org/docs/latest/rules/no-new): `error`
+- [`no-new-func`](https://eslint.org/docs/latest/rules/no-new-func): `error`
+- [`no-new-wrappers`](https://eslint.org/docs/latest/rules/no-new-wrappers): `error`
+- [`no-object-constructor`](https://eslint.org/docs/latest/rules/no-object-constructor): `error`
+- [`no-octal-escape`](https://eslint.org/docs/latest/rules/no-octal-escape): `error`
+- [`no-param-reassign`](https://eslint.org/docs/latest/rules/no-param-reassign): `error` (ignore to reducer, contexts, request, response, state)
+- [`no-plusplus`](https://eslint.org/docs/latest/rules/no-plusplus): `error` (allows in `for` loops)
+- [`no-promise-executor-return`](https://eslint.org/docs/latest/rules/no-promise-executor-return): `error`
+- [`no-proto`](https://eslint.org/docs/latest/rules/no-proto): `error`
+- [`no-redeclare`](https://eslint.org/docs/latest/rules/no-redeclare): `error`
+- [`no-restricted-exports`](https://eslint.org/docs/latest/rules/no-restricted-exports): `error` (disallow `default`, `then` exports)
+- [`no-restricted-globals`](https://eslint.org/docs/latest/rules/no-restricted-globals): `error` (`isFinite`, `isNaN`)
+- [`no-restricted-properties`](https://eslint.org/docs/latest/rules/no-restricted-properties): `error` (`isFinite`, `isNaN`, `__defineGetter__`, `__defineSetter__`)
+- [`no-restricted-syntax`](https://eslint.org/docs/latest/rules/no-restricted-syntax): `error` (`WithStatement`, `LabeledStatement`)
+- [`no-return-assign`](https://eslint.org/docs/latest/rules/no-return-assign): `error` (disallow all assignments)
+- [`no-script-url`](https://eslint.org/docs/latest/rules/no-script-url): `error`
+- [`no-self-compare`](https://eslint.org/docs/latest/rules/no-self-compare): `error`
+- [`no-sequences`](https://eslint.org/docs/latest/rules/no-sequences): `error`
+- [`no-shadow`](https://eslint.org/docs/latest/rules/no-shadow): `error`
+- [`no-template-curly-in-string`](https://eslint.org/docs/latest/rules/no-template-curly-in-string): `error`
+- [`no-throw-literal`](https://eslint.org/docs/latest/rules/no-throw-literal): `error`
+- [`no-undef-init`](https://eslint.org/docs/latest/rules/no-undef-init): `error`
+- [`no-unneeded-ternary`](https://eslint.org/docs/latest/rules/no-unneeded-ternary): `error` (disallows the conditional expression as a default assignment pattern too)
+- [`no-unreachable-loop`](https://eslint.org/docs/latest/rules/no-unreachable-loop): `error`
+- [`no-unused-expressions`](https://eslint.org/docs/latest/rules/no-unused-expressions): `error`
+- [`no-unused-labels`](https://eslint.org/docs/latest/rules/no-unused-labels): `error`
+- [`no-unused-vars`](https://eslint.org/docs/latest/rules/no-unused-vars): `error`
+  - ignore after used arguments
+  - ignore pattern: `/^_/`
+  - ignore rest siblings
+- [`no-use-before-define`](https://eslint.org/docs/latest/rules/no-use-before-define): `error`
+- [`no-useless-computed-key`](https://eslint.org/docs/latest/rules/no-useless-computed-key): `error`
+- [`no-useless-concat`](https://eslint.org/docs/latest/rules/no-useless-concat): `error`
+- [`no-useless-constructor`](https://eslint.org/docs/latest/rules/no-useless-constructor): `error`
+- [`no-useless-rename`](https://eslint.org/docs/latest/rules/no-useless-rename): `error`
+- [`no-useless-return`](https://eslint.org/docs/latest/rules/no-useless-return): `error`
+- [`no-var`](https://eslint.org/docs/latest/rules/no-var): `error`
+- [`no-void`](https://eslint.org/docs/latest/rules/no-void): `error` (allows the void operator as a statement)
+- [`object-shorthand`](https://eslint.org/docs/latest/rules/object-shorthand): `error` (ignore constructors, avoid quotes)
+- [`one-var`](https://eslint.org/docs/latest/rules/one-var): `error` (requires multiple variable declarations per scope)
+- [`operator-assignment`](https://eslint.org/docs/latest/rules/operator-assignment): `error`
+- [`prefer-arrow-callback`](https://eslint.org/docs/latest/rules/prefer-arrow-callback): `error`
+- [`prefer-const`](https://eslint.org/docs/latest/rules/prefer-const): `error` (ignore variables that are read between the declaration and the first assignment)
+- [`prefer-destructuring`](https://eslint.org/docs/latest/rules/prefer-destructuring): `error`
+  - `VariableDeclarator`: set `false` to array, `true` to object
+  - `AssignmentExpression`: set `true` to array, `false` to object
+  - set `true` to `enforceForRenamedProperties`
+- [`prefer-exponentiation-operator`](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator): `error`
+- [`prefer-numeric-literals`](https://eslint.org/docs/latest/rules/prefer-numeric-literals): `error`
+- [`prefer-object-spread`](https://eslint.org/docs/latest/rules/prefer-object-spread): `error`
+- [`prefer-promise-reject-errors`](https://eslint.org/docs/latest/rules/prefer-promise-reject-errors): `error` (allow empty reject)
+- [`prefer-regex-literals`](https://eslint.org/docs/latest/rules/prefer-regex-literals): `error` (disallow redundant wrapping)
+- [`prefer-rest-params`](https://eslint.org/docs/latest/rules/prefer-rest-params): `error`
+- [`prefer-spread`](https://eslint.org/docs/latest/rules/prefer-spread): `error`
+- [`prefer-template`](https://eslint.org/docs/latest/rules/prefer-template): `error`
+- [`radix`](https://eslint.org/docs/latest/rules/radix): `error`
+- [`symbol-description`](https://eslint.org/docs/latest/rules/symbol-description): `error`
+- [`unicode-bom`](https://eslint.org/docs/latest/rules/unicode-bom): `error` (never)
+- [`valid-typeof`](https://eslint.org/docs/latest/rules/valid-typeof): `error` (require string literals)
+- [`vars-on-top`](https://eslint.org/docs/latest/rules/vars-on-top): `error`
+- [`yoda`](https://eslint.org/docs/latest/rules/yoda): `error`
 
 `import`
 
@@ -180,15 +286,24 @@ export default defineConfig([
 
 `@typescript-eslint`
 
+- [`@typescript-eslint/class-methods-use-this`](https://typescript-eslint.io/rules/class-methods-use-this/): `error` (extends `class-methods-use-this`)
+- [`@typescript-eslint/consistent-return`](https://typescript-eslint.io/rules/consistent-return/): `error` (extends `consistent-return`)
+- [`@typescript-eslint/default-param-last`](https://typescript-eslint.io/rules/default-param-last): `error` (extends `default-param-last`)
+- [`@typescript-eslint/dot-notation`](https://typescript-eslint.io/rules/dot-notation): `error` (extends `dot-notation`)
 - [`@typescript-eslint/no-base-to-string`](https://typescript-eslint.io/rules/no-base-to-string/): `error` (ignore from `Error`, `RegExp`, `URL`, `URLSearchParams`, `ReactNode`, `ArrayBuffer`)
 - [`@typescript-eslint/no-confusing-void-expression`](https://typescript-eslint.io/rules/no-confusing-void-expression/): `error` (ignore "shorthand" arrow functions)
+- [`@typescript-eslint/no-empty-function`](https://typescript-eslint.io/rules/no-empty-function): `error` (extends `no-empty-function`)
 - [`@typescript-eslint/no-empty-object-type`](https://typescript-eslint.io/rules/no-empty-object-type/): `error` (allow interfaces with single extends)
 - [`@typescript-eslint/no-floating-promises`](https://typescript-eslint.io/rules/no-floating-promises/): `error` (ignore `void` expressions and IIFEs)
+- [`@typescript-eslint/no-loop-func`](https://typescript-eslint.io/rules/no-loop-func): `error` (extends `no-loop-func`)
 - [`@typescript-eslint/no-misused-promises`](https://typescript-eslint.io/rules/no-misused-promises/): `error` (ignore when a Promise is returned from a function typed as returning `void`)
-- [`@typescript-eslint/no-unused-vars`](https://typescript-eslint.io/rules/no-unused-vars/): `error`
-  - ignore arguments pattern: `/^_/`
-  - ignore variables pattern: `/^_/`
-  - ignore rest siblings
+- [`@typescript-eslint/no-shadow`](https://typescript-eslint.io/rules/no-shadow): `error` (extends `no-shadow`)
+- [`@typescript-eslint/no-unused-vars`](https://typescript-eslint.io/rules/no-unused-vars/): `error` (extends `no-unused-vars`)
+- [`@typescript-eslint/no-use-before-define`](https://typescript-eslint.io/rules/no-use-before-define): `error` (extends `no-use-before-define`)
+- [`@typescript-eslint/no-useless-constructor`](https://typescript-eslint.io/rules/no-useless-constructor): `error` (extends `no-useless-constructor`)
+- [`@typescript-eslint/only-throw-error`](https://typescript-eslint.io/rules/only-throw-error): `error` (extends `no-throw-literal`)
+- [`@typescript-eslint/prefer-destructuring`](https://typescript-eslint.io/rules/prefer-destructuring): `error` (extends `prefer-destructuring`)
 - [`@typescript-eslint/prefer-promise-reject-errors`](https://typescript-eslint.io/rules/prefer-promise-reject-errors/): `error` (allow throwing values typed as `unknown`)
-- [`@typescript-eslint/restrict-template-expressions`](https://typescript-eslint.io/rules/restrict-template-expressions/): `error` (allow number )
+- [`@typescript-eslint/require-await`](https://typescript-eslint.io/rules/require-await): `off`
+- [`@typescript-eslint/restrict-template-expressions`](https://typescript-eslint.io/rules/restrict-template-expressions/): `error` (allow number)
 - [`@typescript-eslint/unbound-method`](https://typescript-eslint.io/rules/unbound-method/): `error` (ignore static)
