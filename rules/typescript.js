@@ -5,8 +5,6 @@ export default {
   'class-methods-use-this': 'off',
   'consistent-return': 'off',
   'default-param-last': 'off',
-  'dot-notation': 'off',
-  'no-empty-function': 'off',
   'no-loop-func': 'off',
   'no-redeclare': 'off',
   'no-shadow': 'off',
@@ -28,7 +26,6 @@ export default {
     },
   ],
   '@typescript-eslint/default-param-last': 'error',
-  '@typescript-eslint/dot-notation': 'error',
   '@typescript-eslint/no-base-to-string': [
     'error',
     {
@@ -46,20 +43,6 @@ export default {
     'error',
     {
       ignoreArrowShorthand: true,
-    },
-  ],
-  '@typescript-eslint/no-empty-function': [
-    'error',
-    {
-      allow: [
-        'arrowFunctions',
-        'functions',
-        'methods',
-        'private-constructors',
-        'protected-constructors',
-        'decoratedFunctions',
-        'overrideMethods',
-      ],
     },
   ],
   '@typescript-eslint/no-empty-object-type': [
@@ -121,4 +104,40 @@ export default {
     },
   ],
   '@typescript-eslint/unbound-method': ['error', { ignoreStatic: true }],
+
+  /* Stylistic */
+
+  'dot-notation': 'off',
+  'no-empty-function': 'off',
+  '@typescript-eslint/adjacent-overload-signatures': 'error',
+  '@typescript-eslint/array-type': 'error',
+  '@typescript-eslint/ban-tslint-comment': 'error',
+  '@typescript-eslint/consistent-generic-constructors': 'error',
+  '@typescript-eslint/consistent-indexed-object-style': 'error',
+  '@typescript-eslint/consistent-type-assertions': 'error',
+  '@typescript-eslint/dot-notation': 'error',
+  '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+  '@typescript-eslint/no-empty-function': [
+    'error',
+    {
+      allow: [
+        'arrowFunctions',
+        'functions',
+        'methods',
+        'private-constructors',
+        'protected-constructors',
+        'decoratedFunctions',
+        'overrideMethods',
+      ],
+    },
+  ],
+  '@typescript-eslint/no-inferrable-types': 'error',
+  '@typescript-eslint/prefer-find': 'error',
+  '@typescript-eslint/prefer-for-of': 'error',
+  '@typescript-eslint/prefer-function-type': 'error',
+  '@typescript-eslint/prefer-includes': 'error',
+  '@typescript-eslint/prefer-nullish-coalescing': 'error',
+  '@typescript-eslint/prefer-optional-chain': 'error',
+  '@typescript-eslint/prefer-regexp-exec': 'error',
+  '@typescript-eslint/prefer-string-starts-ends-with': 'error',
 };

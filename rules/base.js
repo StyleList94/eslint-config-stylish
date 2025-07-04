@@ -3,18 +3,7 @@
 /** @type {import('eslint').Linter.RulesRecord} */
 export default {
   'array-callback-return': ['error', { allowImplicit: true }],
-  'arrow-body-style': 'error',
   'block-scoped-var': 'error',
-  camelcase: [
-    'error',
-    {
-      properties: 'never',
-      ignoreDestructuring: false,
-      ignoreImports: true,
-      ignoreGlobals: true,
-      allow: ['^unstable_', '^experimental_'],
-    },
-  ],
   'class-methods-use-this': [
     'error',
     {
@@ -31,34 +20,18 @@ export default {
   'default-case': ['error', { commentPattern: '^skip default$' }],
   'default-case-last': 'error',
   'default-param-last': 'error',
-  'dot-notation': 'error',
   eqeqeq: ['error', 'always', { null: 'ignore' }],
-  'func-names': ['warn', 'as-needed', { generators: 'as-needed' }],
   'grouped-accessor-pairs': 'error',
   'guard-for-in': 'error',
   'max-classes-per-file': ['error', 1],
-  'new-cap': [
-    'error',
-    {
-      capIsNew: false,
-      properties: false,
-    },
-  ],
   'no-alert': 'warn',
   'no-array-constructor': 'error',
   'no-await-in-loop': 'error',
   'no-caller': 'error',
   'no-console': 'warn',
   'no-constructor-return': 'error',
-  'no-continue': 'error',
   'no-div-regex': 'error',
   'no-else-return': ['error', { allowElseIf: false }],
-  'no-empty-function': [
-    'error',
-    {
-      allow: ['arrowFunctions', 'functions', 'methods'],
-    },
-  ],
   'no-eval': 'error',
   'no-extend-native': 'error',
   'no-extra-bind': 'error',
@@ -69,11 +42,7 @@ export default {
   'no-label-var': 'error',
   'no-labels': 'error',
   'no-lone-blocks': 'error',
-  'no-lonely-if': 'error',
   'no-loop-func': 'error',
-  'no-multi-assign': 'error',
-  'no-multi-str': 'error',
-  'no-nested-ternary': 'error',
   'no-new': 'error',
   'no-new-func': 'error',
   'no-new-wrappers': 'error',
@@ -94,7 +63,6 @@ export default {
       ],
     },
   ],
-  'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
   'no-promise-executor-return': 'error',
   'no-proto': 'error',
   'no-redeclare': 'error',
@@ -170,7 +138,6 @@ export default {
   'no-template-curly-in-string': 'error',
   'no-throw-literal': 'error',
   'no-undef-init': 'error',
-  'no-unneeded-ternary': ['error', { defaultAssignment: false }],
   'no-unreachable-loop': [
     'error',
     {
@@ -189,13 +156,55 @@ export default {
     },
   ],
   'no-use-before-define': 'error',
-  'no-useless-computed-key': 'error',
-  'no-useless-concat': 'error',
   'no-useless-constructor': 'error',
-  'no-useless-rename': 'error',
-  'no-useless-return': 'error',
   'no-var': 'error',
   'no-void': ['error', { allowAsStatement: true }],
+  'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
+  'prefer-rest-params': 'error',
+  'prefer-spread': 'error',
+  radix: 'error',
+  'symbol-description': 'error',
+  'valid-typeof': ['error', { requireStringLiterals: true }],
+
+  /* Stylistic */
+
+  'arrow-body-style': 'error',
+  camelcase: [
+    'error',
+    {
+      properties: 'never',
+      ignoreDestructuring: false,
+      ignoreImports: true,
+      ignoreGlobals: true,
+      allow: ['^unstable_', '^experimental_'],
+    },
+  ],
+  'dot-notation': 'error',
+  'func-names': ['warn', 'as-needed', { generators: 'as-needed' }],
+  'new-cap': [
+    'error',
+    {
+      capIsNew: false,
+      properties: false,
+    },
+  ],
+  'no-continue': 'error',
+  'no-empty-function': [
+    'error',
+    {
+      allow: ['arrowFunctions', 'functions', 'methods'],
+    },
+  ],
+  'no-lonely-if': 'error',
+  'no-multi-assign': 'error',
+  'no-multi-str': 'error',
+  'no-nested-ternary': 'error',
+  'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+  'no-unneeded-ternary': ['error', { defaultAssignment: false }],
+  'no-useless-computed-key': 'error',
+  'no-useless-concat': 'error',
+  'no-useless-rename': 'error',
+  'no-useless-return': 'error',
   'object-shorthand': [
     'error',
     'always',
@@ -233,20 +242,14 @@ export default {
   'prefer-exponentiation-operator': 'error',
   'prefer-numeric-literals': 'error',
   'prefer-object-spread': 'error',
-  'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
   'prefer-regex-literals': [
     'error',
     {
       disallowRedundantWrapping: true,
     },
   ],
-  'prefer-rest-params': 'error',
-  'prefer-spread': 'error',
   'prefer-template': 'error',
-  radix: 'error',
-  'symbol-description': 'error',
   'unicode-bom': ['error', 'never'],
-  'valid-typeof': ['error', { requireStringLiterals: true }],
   'vars-on-top': 'error',
   yoda: 'error',
 };
