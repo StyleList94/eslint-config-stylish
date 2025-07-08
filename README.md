@@ -57,11 +57,16 @@ export default defineConfig([
 ```js
 import { defineConfig } from 'eslint/config';
 import stylishReact from 'eslint-config-stylish/react';
+import stylishReactHooks from 'eslint-config-stylish/react-hooks';
 
 export default defineConfig([
   {
     files: ['**/*.{js,jsx,tsx}'],
-    extends: [stylishReact],
+    extends: [stylishReact, stylishReactHooks],
+  },
+  {
+    files: ['**/use*.ts'],
+    extends: [stylishReactHooks],
   },
   /* */
 ]);
