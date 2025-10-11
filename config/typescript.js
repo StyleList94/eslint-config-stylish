@@ -1,10 +1,11 @@
 import tseslint from 'typescript-eslint';
+import { defineConfig } from "eslint/config";
 import importPlugin from 'eslint-plugin-import';
 
 import typescriptRules from '../rules/typescript.js';
 import { importOrderOptions } from '../rules/import.js';
 
-export default tseslint.config({
+export default defineConfig({
   extends: [
     tseslint.configs.strictTypeChecked,
     importPlugin.flatConfigs.typescript,

@@ -1,9 +1,9 @@
-import tseslint from 'typescript-eslint';
+import { defineConfig } from "eslint/config";
 import reactHooks from 'eslint-plugin-react-hooks';
 
 import reactHooksRules from '../rules/react-hooks.js';
 
-export default tseslint.config({
+export default defineConfig({
   plugins: {
     'react-hooks': reactHooks,
   },

@@ -1,11 +1,11 @@
 import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import { defineConfig } from "eslint/config";
 import importPlugin from 'eslint-plugin-import';
 
 import baseRules from '../rules/base.js';
 import importRules from '../rules/import.js';
 
-export default tseslint.config({
+export default defineConfig({
   ignores: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**'],
   extends: [eslint.configs.recommended, importPlugin.flatConfigs.recommended],
   settings: {
