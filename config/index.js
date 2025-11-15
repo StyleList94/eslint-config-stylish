@@ -1,5 +1,5 @@
 import eslint from '@eslint/js';
-import { defineConfig } from "eslint/config";
+import { defineConfig } from 'eslint/config';
 import importPlugin from 'eslint-plugin-import';
 
 import baseRules from '../rules/base.js';

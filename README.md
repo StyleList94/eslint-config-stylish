@@ -12,6 +12,7 @@ Requirements:
 - `eslint-plugin-jsx-a11y`: v6 or later
 - `eslint-plugin-react`: v7 or later
 - `eslint-plugin-react-hooks`: v5 or later
+- `eslint-plugin-react-you-might-not-need-an-effect`: v0.7.0 or later
 - `typescript-eslint`: v8 or later (if you use TypeScript)
 - `eslint-import-resolver-typescript`: v3 or later (if you use TypeScript)
 
@@ -23,6 +24,7 @@ pnpm add -D \
   eslint-plugin-jsx-a11y \
   eslint-plugin-react \
   eslint-plugin-react-hooks \
+  eslint-plugin-react-you-might-not-need-an-effect \
   typescript-eslint \
   eslint-import-resolver-typescript
 ```
@@ -103,6 +105,7 @@ export default defineConfig([
 - `import`: [recommended](https://github.com/import-js/eslint-plugin-import?tab=readme-ov-file#rules)
 - `react`: [recommended](https://github.com/jsx-eslint/eslint-plugin-react?tab=readme-ov-file#list-of-supported-rules)
 - `jsx-a11y`: [recommended](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y?tab=readme-ov-file#supported-rules)
+- `react-you-might-not-need-an-effect`: [recommended](https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect/tree/main?tab=readme-ov-file#-rules)
 - `@typescript-eslint` [strict type checked](https://typescript-eslint.io/rules/?=strict)
 
 ## Customized rules
@@ -289,6 +292,8 @@ export default defineConfig([
 
 - `react-hooks/rules-of-hooks`: `error`
 - `react-hooks/exhaustive-deps`: `warn`
+
+[You Might Not Need an Effect](https://react.dev/learn/you-might-not-need-an-effect) all rules from the [recommended configuration](https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect/tree/main?tab=readme-ov-file#-rules) are enabled
 
 ### `jsx-a11y`
 

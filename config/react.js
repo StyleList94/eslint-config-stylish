@@ -1,4 +1,4 @@
-import { defineConfig } from "eslint/config";
+import { defineConfig } from 'eslint/config';
 import reactPlugin from 'eslint-plugin-react';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import globals from 'globals';
