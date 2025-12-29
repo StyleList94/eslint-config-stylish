@@ -176,6 +176,7 @@ export default defineConfig([
   - ignore pattern: `/^_/`
   - ignore rest siblings
 - [`no-use-before-define`](https://eslint.org/docs/latest/rules/no-use-before-define): `error`
+- [`no-useless-assignment`](https://eslint.org/docs/latest/rules/no-useless-assignment): `error`
 - [`no-useless-constructor`](https://eslint.org/docs/latest/rules/no-useless-constructor): `error`
 - [`no-var`](https://eslint.org/docs/latest/rules/no-var): `error`
 - [`no-void`](https://eslint.org/docs/latest/rules/no-void): `error` (allows the void operator as a statement)

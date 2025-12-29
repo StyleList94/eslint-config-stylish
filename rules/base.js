@@ -156,6 +156,7 @@ export default {
     },
   ],
   'no-use-before-define': 'error',
+  'no-useless-assignment': 'error',
   'no-useless-constructor': 'error',
   'no-var': 'error',
   'no-void': ['error', { allowAsStatement: true }],
